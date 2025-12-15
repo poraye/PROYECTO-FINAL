@@ -1,0 +1,44 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Jersey Argentina Mundial 2022",
+      "categoria": "playeras",
+      "precio": 544.80,
+      "imagen": "img/Jersey Argentina Mundial 2022.jpg",
+      "descripcion": "Jersey oficial del Mundial Qatar 2022 - Campeón. La playera con la que Messi levantó la Copa del Mundo"
+    },
+    {
+      "id": 2,
+      "nombre": "Playera Barcelona Messi 10",
+      "categoria": "playeras",
+      "precio": 690.31,
+      "imagen": "img/Playera Barcelona Messi 10.png",
+      "descripcion": "Playera oficial estilo Barcelona con el legendario número 10 de la época dorada del Barça"
+    },
+    {
+      "id": 3,
+      "nombre": "Balón Al Rihla Messi Edition",
+      "categoria": "balones",
+      "precio": 600.00,
+      "imagen": "img/Balon Al Rihla Messi Edition.jpg",
+      "descripcion": "Balón oficial del Mundial Qatar 2022 con firma de Messi. Edición limitada de colección"
+    },
+    {
+      "id": 4,
+      "nombre": "Sudadera Argentina Campeón",
+      "categoria": "sudaderas",
+      "precio": 987.50,
+      "imagen": "img/Sudadera Argentina Campeon.jpg",
+      "descripcion": "Sudadera conmemorativa del Mundial 2022. Diseño exclusivo con 3 estrellas"
+    },
+    {
+      "id": 5,
+      "nombre": "Gorra Messi Argentina",
+      "categoria": "accesorios",
+      "precio": 399.00,
+      "imagen": "img/Gorra Messi Argentina.jpg",
+      "descripcion": "Gorra ajustable con bordado de calidad. Logo de la AFA y número 10 de Messi"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messi Store - Productos Oficiales</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER CON NAVEGACIÓN -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>⚽ MESSI STORE</h1>
+                <p class="tagline">El legado del mejor</p>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="active">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="quienes.html">Quiénes Somos</a>
+                <a href="politicas.html">Políticas</a>
+                <a href="login.html">Login</a>
+            </nav>
+            <div class="cart-icon">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2 class="hero-title">La Leyenda Vive Aquí</h2>
+            <p class="hero-subtitle">Productos oficiales inspirados en Lionel Messi</p>
+            <a href="productos.html" class="btn-primary">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- CATEGORÍAS DESTACADAS -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Categorías Populares</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">👕</div>
+                    <h3>Playeras</h3>
+                    <p>Barcelona y Argentina</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⚽</div>
+                    <h3>Balones</h3>
+                    <p>Edición Messi</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🧥</div>
+                    <h3>Sudaderas</h3>
+                    <p>Colección exclusiva</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎒</div>
+                    <h3>Accesorios</h3>
+                    <p>Gorras, mochilas y más</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div class="product-grid" id="featured-products">
+                <!-- Productos cargados dinámicamente -->
+            </div>
+            <div class="btn-center">
+                <a href="productos.html" class="btn-secondary">Ver Todos los Productos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Messi Store</h3>
+                    <p>La tienda oficial de productos inspirados en el mejor jugador del mundo.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <a href="productos.html">Productos</a>
+                    <a href="quienes.html">Quiénes Somos</a>
+                    <a href="politicas.html">Políticas</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>📧 info@messistore.com</p>
+                    <p>📞 +52 55 1234 5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Messi Store. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket de Compra - Messi Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>⚽ MESSI STORE</h1>
+                <p class="tagline">El legado del mejor</p>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="quienes.html">Quiénes Somos</a>
+                <a href="politicas.html">Políticas</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- TICKET -->
+    <section class="ticket-section">
+        <div class="container">
+            <div class="success-message">
+                <div class="success-icon">✅</div>
+                <h2>¡Compra Realizada con Éxito!</h2>
+                <p>Gracias por tu compra en Messi Store</p>
+            </div>
+
+            <div class="ticket-container">
+                <div class="ticket-header">
+                    <h1>⚽ MESSI STORE</h1>
+                    <p>TICKET DE COMPRA</p>
+                    <div class="ticket-number">
+                        <strong>No. Pedido:</strong> <span id="ticket-order-number">MS-2024-001234</span>
+                    </div>
+                    <div class="ticket-date">
+                        <strong>Fecha:</strong> <span id="ticket-date"></span>
+                    </div>
+                </div>
+
+                <div class="ticket-customer">
+                    <h3>📋 Información del Cliente</h3>
+                    <p><strong>Nombre:</strong> <span id="ticket-nombre">-</span></p>
+                    <p><strong>Email:</strong> <span id="ticket-email">-</span></p>
+                    <p><strong>Teléfono:</strong> <span id="ticket-telefono">-</span></p>
+                    <p><strong>Dirección:</strong> <span id="ticket-direccion">-</span></p>
+                </div>
+
+                <div class="ticket-items">
+                    <h3>🛍️ Productos Comprados</h3>
+                    <table class="ticket-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cant.</th>
+                                <th>Precio</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ticket-products">
+                            <!-- Productos cargados dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="ticket-totals">
+                    <div class="ticket-row">
+                        <span>Subtotal:</span>
+                        <span id="ticket-subtotal">$0.00</span>
+                    </div>
+                    <div class="ticket-row">
+                        <span>Envío:</span>
+                        <span id="ticket-envio">$150.00</span>
+                    </div>
+                    <div class="ticket-row ticket-total">
+                        <span>TOTAL:</span>
+                        <span id="ticket-total">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="ticket-payment">
+                    <h3>💳 Método de Pago</h3>
+                    <p id="ticket-payment-method">Tarjeta de Crédito ****1234</p>
+                    <p class="payment-status">✅ Pago Confirmado</p>
+                </div>
+
+                <div class="ticket-shipping">
+                    <h3>🚚 Información de Envío</h3>
+                    <p>Tu pedido será enviado en las próximas 24-48 horas.</p>
+                    <p><strong>Tiempo estimado de entrega:</strong> 3-5 días hábiles</p>
+                    <p><strong>Número de rastreo:</strong> Se enviará por email</p>
+                </div>
+
+                <div class="ticket-footer">
+                    <p>📧 Recibirás un correo de confirmación con los detalles de tu pedido.</p>
+                    <p>💬 Para cualquier duda, contáctanos: soporte@messistore.com</p>
+                    <p class="ticket-thanks">¡Gracias por tu preferencia! 🙌</p>
+                </div>
+
+                <div class="ticket-actions">
+                    <button class="btn-secondary" onclick="window.print()">
+                        🖨️ Imprimir Ticket
+                    </button>
+                    <button class="btn-primary" onclick="descargarPDF()">
+                        📥 Descargar PDF
+                    </button>
+                    <a href="index.html" class="btn-secondary">
+                        🏠 Volver al Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Messi Store</h3>
+                    <p>La tienda oficial de productos inspirados en el mejor jugador del mundo.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <a href="productos.html">Productos</a>
+                    <a href="quienes.html">Quiénes Somos</a>
+                    <a href="politicas.html">Políticas</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>📧 info@messistore.com</p>
+                    <p>📞 +52 55 1234 5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Messi Store. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script>
+        // Cargar datos del ticket desde localStorage
+        window.onload = function() {
+            const orderData = JSON.parse(localStorage.getItem('lastOrder') || '{}');
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+            // Fecha actual
+            const now = new Date();
+            document.getElementById('ticket-date').textContent = now.toLocaleDateString('es-MX') + ' ' + now.toLocaleTimeString('es-MX');
+
+            // Número de orden aleatorio
+            const orderNum = 'MS-' + now.getFullYear() + '-' + Math.floor(Math.random() * 900000 + 100000);
+            document.getElementById('ticket-order-number').textContent = orderNum;
+
+            // Datos del cliente
+            document.getElementById('ticket-nombre').textContent = orderData.nombre || 'Cliente';
+            document.getElementById('ticket-email').textContent = orderData.email || 'email@ejemplo.com';
+            document.getElementById('ticket-telefono').textContent = orderData.telefono || '+52 55 0000 0000';
+            document.getElementById('ticket-direccion').textContent = orderData.direccion || 'Dirección no especificada';
+
+            // Productos
+            const tbody = document.getElementById('ticket-products');
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+                const itemTotal = item.precio * item.cantidad;
+                subtotal += itemTotal;
+
+                row.innerHTML = `
+                    <td>${item.nombre}</td>
+                    <td>${item.cantidad}</td>
+                    <td>$${item.precio.toFixed(2)}</td>
+                    <td>$${itemTotal.toFixed(2)}</td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            const envio = subtotal >= 999 ? 0 : 150;
+            const total = subtotal + envio;
+
+            document.getElementById('ticket-subtotal').textContent = '$' + subtotal.toFixed(2);
+            document.getElementById('ticket-envio').textContent = envio === 0 ? 'GRATIS' : '$' + envio.toFixed(2);
+            document.getElementById('ticket-total').textContent = '$' + total.toFixed(2);
+
+            // Limpiar carrito
+            localStorage.removeItem('cart');
+        };
+
+        function descargarPDF() {
+            alert('Funcionalidad de descarga PDF. En producción se integraría con una librería como jsPDF.');
+        }
+    </script>
+</body>
+</html>
